@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -oP '^[^:]+|.*:\K[^:]+(?=:[^:]+)' /etc/password | sort
+awk -F: ' $3 <= 100 {print $1, $6}' /etc/password | sort
