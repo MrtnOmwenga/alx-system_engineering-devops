@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
--- Prints the script's pid
+# Prints the script's pid
 
 echo $$
