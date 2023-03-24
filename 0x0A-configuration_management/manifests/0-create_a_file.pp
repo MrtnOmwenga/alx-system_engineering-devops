@@ -1,5 +1,5 @@
 # Creates file school in /tmp
-node 'default' {
+node default {
   # Create file
   file{ '/tmp/school':
     ensure  =>'present',
