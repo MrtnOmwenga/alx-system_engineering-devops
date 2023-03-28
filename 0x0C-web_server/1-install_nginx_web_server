@@ -5,4 +5,5 @@ sudo apt-get update
 sudo apt-get -y install nginx
 sudo /etc/init.d/nginx restart
 
+sudo chmod 777 /var/www/html -R
 sudo echo "Hello World!" > /var/www/html/index.html
