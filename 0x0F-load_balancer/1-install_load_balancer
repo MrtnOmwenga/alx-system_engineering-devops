@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Install HAproxy on 115765-web-01
+
+# Install
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.7
+sudo apt-get install haproxy=2.7.\*
+
+# Configure
+sudo cat << EOF >> /etc/haproxy/haproxy.cfg
+
+listen load_balancer
+        bind :80
+	mode http
+	option httpclose
+	option forwardfor
+        balance roundrobin
+        server 148073-web-01 52.87.153.4:80 check
+        server 148073-web-02 100.25.137.85:80 check
+EOF
+
+# Restart
+sudo /etc/init.d/haproxy restart
