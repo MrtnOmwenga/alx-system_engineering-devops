@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Transfer file to server
+
+# Check variables
+if [ $# -ne 2 ]
+then
+    echo "Enter server name"
+fi
+
+# Transfer file
+if [ $1 = 'web_01' ]
+then
+    scp -o StrictHostKeyChecking=no -C -i ~/.ssh/school -r $2 ubuntu@34.202.234.109:~/
+elif [ $1 = 'web_02' ]
+then
+    scp -o StrictHostKeyChecking=no -C -i ~/.ssh/school -r $2 ubuntu@18.210.15.27:~/
+fi
