@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-""" Get to-do list of an employee
-based on employee id """
-
-
+"""Exports to-do list information for a given employee ID to CSV format."""
+import csv
 import requests
 import sys
-
 
 if __name__ == "__main__":
     user_id = sys.argv[1]
