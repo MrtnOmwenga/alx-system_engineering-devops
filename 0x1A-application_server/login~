@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Login to web server 01
+
+ssh -i ~/.ssh.school ubuntu@34.202.234.109
